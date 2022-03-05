@@ -1,5 +1,13 @@
 # CHISEL RECORD
 
+this markdown notebook is my study record.to write down Chisel notebook. If had something wrong,plz email or push your issue .
+
+@author: wataru030 
+
+@EMAIL: 3119002373@mail2.gdut.edu.cn
+
+
+
 ## SCALA PART
 
 understanding scala lang .here have something normoally used .
