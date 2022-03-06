@@ -101,6 +101,127 @@ class WrapCounter(counterBits: Int) {
 
 ~~~
 
+## CHISEL PART
+
+chisel provides three data types to describe our signals,combination logic,and register.there are:
+
+~~~scala 
+//(n.W) --> width is n .
+
+Bits(n.W)//bit
+UInt(n.W) //unsigned
+SInt(n.W) //signed
+
+//for example
+unsigned 8 with 4 width:
+8.U(4.W) 
+signed -3 with 4 width :
+-3.S(4.w)
+
+1.U(32) //--> means catch the 32th bit of 1.U ,result is 0
+~~~
+
+### hex,oct,bin :
+
+b:binary
+
+h:hex
+
+o:oct
+
+default : dec
+
+~~~scala
+//for example
+"hff".U(8.W) //--> 8'hff
+"0377".U(21.W)//--->31'o377
+"b0011_0100".U(5.W)//--->5'b0011_0100,underscores is ignored
+
+~~~
+
+### Bool
+
+~~~scala
+Bool()
+true.B 	//true
+false.B	//false
+~~~
+
+### Combination logic 
+
+~~~scala
+and : &
+nor : ~
+xor: ^
+or : |
+add: +
+sub: -
+modulo: %
+neg: -<x>
+div: /
+mul: *
+~~~
+
+~~~scala
+val w = Wire(UInt()) //define w is wire type
+w := a&b //assign w = a& b 
+-----
+//this is like :
+val w = a & b //wire w = a & b 
+~~~
+
+* data from high to low
+
+`val w = Word(7,0)`:`//assign w = Word[7:0]`
+
+* Cat
+
+`val w = Cat(high,low)`:`//wire w = {high,low} `
+
+### Mux
+
+`val = mul_result = Mux(sel,a,b)`: when sel is true ,sel a, else sel b. ,a ,b could be a bit or victor
+
+### Counter
+
+~~~scala
+val cntReg = RegInit(0.U(8.W))
+cntReg := Mux(cntReg === 100.U , 0.U , cntReg + 1.U)
+~~~
+
+### Bundle and Vec
+
+a Chisel bundle groups several signals.
+
+~~~scala
+val ch = Wire(new Channel())
+ch.data := 123.U
+ch.valid := true.B
+
+val b = ch.valid
+
+val channel = ch 
+~~~
+
+~~~scala
+v(0)=1.U
+v(1)= 3.U
+v(2)=5.U
+
+val index = 1.U(2.W)
+val a = v(index) //a = v(1) = 3
+~~~
+
+### Regfile
+
+~~~scala
+
+val regFile = Reg(Vec(32,UInt(32.W)))//reg [31:0]regFile[31:0] 
+
+regFile := dataIn
+val dataOut = regFile(index)
+~~~
+
 
 
 ---
@@ -124,7 +245,7 @@ class WrapCounter(counterBits: Int) {
   end
 ~~~
 
-* `val register = RegNext(<data_width>)` and 
+* `val register = RegNext(<data_width>)` and `val reg = RegNext(<data>,<rst_value>)`
 
 * `val register = Reg(<data_width>)`
 
