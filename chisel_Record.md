@@ -160,7 +160,23 @@ modulo: %
 neg: -<x>
 div: /
 mul: *
+
+LOGIC OR || :  
+io.out_or_logical := io.a.orR | io.b.orR //(all 3 width)
 ~~~
+
+### Cat
+
+`val x = Cat(t1(2,1),t2(4,3),t3(3),.....)`:`assign x = {t1[2:1],.......}`
+
+### Fill
+
+~~~scala
+import chisel3.util._
+val i = Fill(num,x) //====> assign i = {num{x}}
+~~~
+
+
 
 ~~~scala
 val w = Wire(UInt()) //define w is wire type
@@ -222,7 +238,9 @@ regFile := dataIn
 val dataOut = regFile(index)
 ~~~
 
+### RAM
 
+`val asgnc_Mem = Mem(16,UInt(32.W))`
 
 ---
 
