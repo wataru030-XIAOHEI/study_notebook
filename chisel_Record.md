@@ -176,6 +176,16 @@ import chisel3.util._
 val i = Fill(num,x) //====> assign i = {num{x}}
 ~~~
 
+### Switch(case)
+
+~~~scala
+switch(cond){
+    is(case1){excute1}
+    is(case2){excute2}
+    ....
+}
+~~~
+
 
 
 ~~~scala
@@ -263,7 +273,7 @@ val dataOut = regFile(index)
   end
 ~~~
 
-* `val register = RegNext(<data_width>)` and `val reg = RegNext(<data>,<rst_value>)`
+* `val register = RegNext(<data_singal>)` and `val reg = RegNext(<data>,<rst_value>)`
 
 * `val register = Reg(<data_width>)`
 

@@ -49,3 +49,29 @@
  
 
 高度较高的窗口？？？
+
+### 链表
+
+​                 ![img](https://docimg3.docs.qq.com/image/FDNsLAtlLZ00MNgmEop_ng.png?w=1280&h=417.11196911196913)        
+
+​                 ![img](https://docimg3.docs.qq.com/image/W_g7SfugtweJPcA4fIFcWQ.png?w=1192&h=743)        
+
+​                 ![img](https://docimg1.docs.qq.com/image/1dqamwc-hClauar8FKgNqg.png?w=1245&h=709)                         ![img](https://docimg6.docs.qq.com/image/6ZSG1frPHTr3UeD2q-yD7Q.png?w=1245&h=768)        
+
+前插法创，逆序输出
+
+​                 ![img](https://docimg3.docs.qq.com/image/nzLu7ZgYBwbdCveODvAsWw.png?w=1280&h=766.4197530864197)        
+
+![image-20220309214919968](C:/Users/wataru/AppData/Roaming/Typora/typora-user-images/image-20220309214919968.png)
+
+#### 删除节点
+
+![](https://raw.githubusercontent.com/wataru030-XIAOHEI/picgo/main/image-20220309214949523.png)
+
+![image-20220309215227812](C:/Users/wataru/AppData/Roaming/Typora/typora-user-images/image-20220309215227812.png)
+
+#### 插入节点
+
+![image-20220309215309899](C:/Users/wataru/AppData/Roaming/Typora/typora-user-images/image-20220309215309899.png)
+
+![image-20220309215352196](C:/Users/wataru/AppData/Roaming/Typora/typora-user-images/image-20220309215352196.png)
