@@ -208,6 +208,38 @@ val w = a & b //wire w = a & b
 
 `val = mul_result = Mux(sel,a,b)`: when sel is true ,sel a, else sel b. ,a ,b could be a bit or victor
 
+### When
+
+~~~scala	
+when(condit){
+ /*code*/   
+}.elsewhen(condit2){//else if
+    /*code*/
+}.otherwise{//else
+    /*codes*/
+}
+~~~
+
+### Match
+
+~~~scala
+val op = "b01101"
+
+val x = op match{
+    case "b00111" => "none"
+    case "b00101" => "match"
+    case _ => "null"
+}
+println(x)
+
+
+//result:
+//op: String = "b01101"
+//x: UInt = UInt<1>(0)
+~~~
+
+
+
 ### Counter
 
 ~~~scala
@@ -274,8 +306,8 @@ val dataOut = regFile(index)
 ~~~
 
 * `val register = RegNext(<data_singal>)` and `val reg = RegNext(<data>,<rst_value>)`
-
 * `val register = Reg(<data_width>)`
+* ==` illegal : Reg(2.U)`==:2.U is a hardware node and can't be used as a model .
 
 create a `reg` without rst in the always block,their generated verilog codes like this  :
 
