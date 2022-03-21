@@ -1,12 +1,30 @@
 # CHISEL RECORD
 
-this markdown notebook is my study record.to write down Chisel notebook. If had something wrong,plz email or push your issue .
+this markdown notebook is my study record.to write down Chisel notebook. If had something wrong,plz email or push your issue . And you can found the many ways to use about chisel in the web:[CHISEL3_HOME](https://www.chisel-lang.org/) .
+
+chiselHDL is high level digital Hardware Describe Language on the scala .
 
 @author: wataru030 
 
 @EMAIL: 3119002373@mail2.gdut.edu.cn
 
+## HOW TO START CHISEL ?
 
+there is a install guide about scala,chisel and sbt .I suggest u installing in the ubuntu and starting study  ubuntu ,because may be use the simulator named `verilator` and the trave tool named `gtkwave`  to simulate .
+
+[way1 in the windows](https://zhuanlan.zhihu.com/p/357342948)
+
+[way2 in the ubuntu ](https://blog.csdn.net/cecilia_winter/article/details/105037757)
+
+**HOW TO INSTALL UBUNTU?**
+
+~~~scal 
+Well ,please search the web .
+~~~
+
+There is the chisel study book online : [Chisel_JupyterLab](https://hub.gke2.mybinder.org/user/freechipsproject-chisel-bootcamp-qodk637o/lab)
+
+Chinese user guide :[guide](http://www.imm.dtu.dk/~masca/chisel-book-chinese.pdf)
 
 ## SCALA PART
 
@@ -206,7 +224,9 @@ val w = a & b //wire w = a & b
 
 ### Mux
 
-`val = mul_result = Mux(sel,a,b)`: when sel is true ,sel a, else sel b. ,a ,b could be a bit or victor
+`val = mul_result = Mux(sel,a,b)`: when sel is true ,sel a, else sel b. ,a ,b could be a bit or victor.
+
+But,we always use the `Muxcase`and `Muxlist`  to build the MUXs .Oh, we have the `Mux1H` too ! 
 
 ### When
 
@@ -282,7 +302,17 @@ val dataOut = regFile(index)
 
 ### RAM
 
-`val asgnc_Mem = Mem(16,UInt(32.W))`
+`val asgnc_Mem = Mem(16,UInt(32.W))`：This RAM is can be compile to the [Regfile](#Regfile)  .
+
+like :
+
+~~~Scala
+val regsFile = Mem(rf_nums,UInt(data_width.W))
+~~~
+
+
+
+
 
 ---
 
@@ -385,10 +415,14 @@ class LFSR (val init:Int = 1 ) extends Module{
 there are normal using imports.
 
 ~~~scala
-import chisel3._
-import chisel3.util._
+import chisel3._		//must to be added 
+import chisel3.util._ //normal
 import chisel3.tester._
 import chisel3.tester.RawTester.test
 import dotvisualizer._
+
+//if you use mill plz :
+import mill._
+//what is mill ? please search the web .
 ~~~
 
